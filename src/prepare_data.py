@@ -1,6 +1,8 @@
-"""Ashley: download, validate, prepare features, and save reproducible splits.
-Run from the project folder: python -m src.prepare_data
-"""
+# This sets up the data for everyone: checks for missing values/duplicates,
+# adds time features, and creates random + chronological train/validation/test splits.
+# Run from the main project folder: python -m src.prepare_data
+# The prepared files will be in data/processed.
+
 import argparse
 import hashlib
 import io

@@ -1,5 +1,10 @@
-"""Common data-loading interface for Hala, Gabi, and Jacob."""
-import json
+# This lets everyone load the prepared data without repeating the setup.
+# Run prepare_data first, then import this helper instead of running this file directly:
+# from src.load_data import load_split
+# X, y, info = load_split("chronological", "train")
+# X = input features, y = energy use, info = row IDs and dates.
+# You can change "train" to "validation"/"test" or "chronological" to "random".
+
 import pandas as pd
 from .prepare_data import ROOT
 

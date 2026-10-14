@@ -17,7 +17,6 @@
 10. `load_split()` gives teammates predictors X, target y, and separate timestamp/ID
     metadata so the target or identifiers cannot accidentally enter X by default.
 
-## Be ready to explain
 - Cleaning does not require changing already-valid data. Checking and documenting
   that no rows need removal is legitimate data-preparation work.
 - Random splits can place nearly adjacent measurements in training and testing;
@@ -27,6 +26,3 @@
   the question and make high-use performance look better than it is.
 - Current measured conditions estimate energy for the same interval. Predicting
   tomorrow needs a different feature-availability design.
-
-Before submitting: run the commands yourself, inspect the report, and edit your
-contribution record to reflect what you personally reviewed and changed.

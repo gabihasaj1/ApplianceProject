@@ -56,9 +56,9 @@
     "training_rows_above_threshold_retained": 1609
   },
   "raw_sha256": "2820bf712ad0275cb18b85a05250926100d8e65ebb9f4d2d016ca91ea152a25d",
-  "run_utc": "2026-10-14T00:02:54.581000+00:00",
+  "run_utc": "2026-10-14T00:28:47.069996+00:00",
   "seed": 42,
-  "python": "3.12.14",
+  "python": "3.12.15",
   "pandas": "2.2.3",
   "numpy": "2.2.6"
 }

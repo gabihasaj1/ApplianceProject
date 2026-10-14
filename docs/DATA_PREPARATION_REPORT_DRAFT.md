@@ -32,5 +32,3 @@ limit generalization. No causal energy savings are established by this preparati
 [1] L. Candanedo, “Appliances Energy Prediction,” UCI Machine Learning Repository,
 2017, doi: 10.24432/C5VC8G. License: CC BY 4.0.
 
-Review this draft and integrate it with the team's report. It describes executed
-preparation checks, not completed modeling or human review. Disclose AI assistance.

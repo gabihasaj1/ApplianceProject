@@ -1,45 +1,78 @@
-# Appliances Energy Prediction — CSI 5810, Group 4
+# Appliances Energy Prediction
+CSI 5810 — Group 4
 
-**Question:** How accurately can household appliance energy use be predicted from
-indoor conditions, weather, and time-of-day features?
+**Research question:** How accurately can household appliance energy use be predicted from indoor conditions, weather, and time-of-day features?
 
-Ashley: coordinator/data preparation. Gabi: exploratory analysis/report.
-Hala: modeling. Jacob: evaluation/interpretation. Roles may overlap.
+## Setup
 
-## Start here
-Python 3.10–3.13 recommended. Open this folder in VS Code; install Microsoft's Python
-extension. Open Terminal > New Terminal, then on macOS run:
+Clone the repo, or pull the latest changes if you already have it. Open the project folder in VS Code and use **Python 3.12**.
 
-```sh
-python3 -m venv .venv
+Run these in the terminal from the project folder (Mac):
+
+```bash
+python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+```
+
+In VS Code, go to **Python: Select Interpreter** and select `.venv`.
+
+You only need to create the environment once. For a new terminal session, activate it again:
+
+```bash
+source .venv/bin/activate
+```
+
+## Prepare the data
+
+```bash
 python -m src.prepare_data
+```
+
+This downloads the dataset, checks for missing values and duplicates, adds time features, and creates training, validation, and test splits.
+
+The files are saved in `data/processed`. CSV files aren't tracked on GitHub, so everyone needs to run this locally.
+
+There are chronological and random splits. Chronological is our main setup; random is for comparison.
+
+## Use the prepared data
+
+You can read the CSVs or use this helper in your code:
+
+```python
+from src.load_data import load_split
+
+X_train, y_train, train_info = load_split("chronological", "train")
+X_val, y_val, val_info = load_split("chronological", "validation")
+```
+
+- `X`: input features
+- `y`: appliance energy use
+- `info`: row IDs and dates
+
+Change `"chronological"` to `"random"` for the other split. Save the test set for final evaluation after choosing the model and settings.
+
+Don't run `load_data.py` directly. It's a helper that you import into your code.
+
+## Check that everything works
+
+```bash
 python -m unittest discover -s tests -v
 ```
 
-Windows PowerShell: use `py -m venv .venv`, then `.\.venv\Scripts\Activate.ps1`.
-If activation is blocked, invoke `.\.venv\Scripts\python.exe` instead of `python`.
-Select the .venv interpreter using “Python: Select Interpreter” in VS Code.
+You should see five tests pass and `OK`.
 
-The preparation command downloads the public UCI dataset if absent. An offline option:
-download the ZIP from the source link in docs/DATASET.md and place its
-energydata_complete.csv in data/raw, then run the same command.
+## Team
 
-Expected: 19,735 rows, 31 predictors; chronological partitions 13,814 / 2,960 / 2,961.
-Generated CSV files stay local and are excluded from Git. Source metadata and the
-preparation report are tracked for review. Re-running updates the report run timestamp.
+- Ashley — coordination and data preparation
+- Gabi — exploratory analysis and report
+- Hala — modeling
+- Jacob — evaluation and interpretation
 
-Read **docs/HANDOFF.md** for each teammate's next task and the shared loader.
-Read **docs/START_IN_VSCODE.md** for GitHub instructions.
-Read **docs/ASHLEY_WALKTHROUGH.md** to understand and explain your code.
+Roles can overlap. Data preparation is set up; analysis, modeling, and evaluation are next.
 
-## What is ready
-- Reproducible download, validation, calendar features, and split generation.
-- Dataset documentation, variable dictionary, and actual quality report.
-- Common loader plus preparation checks.
-- Coordination log and honest contribution/AI disclosure draft.
+## Dataset
 
-EDA, model training, evaluation results, and the final IEEE report remain team work.
-Source: https://archive.ics.uci.edu/dataset/374/appliances+energy+prediction
-Dataset license: CC BY 4.0. Attribution: Candanedo (2017), doi:10.24432/C5VC8G.
+[UCI Appliances Energy Prediction](https://archive.ics.uci.edu/dataset/374/appliances+energy+prediction)
+
+Candanedo, L. (2017). *Appliances Energy Prediction*. UCI Machine Learning Repository. DOI: 10.24432/C5VC8G. Licensed under CC BY 4.0.

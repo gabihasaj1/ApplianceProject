@@ -1,0 +1,64 @@
+{
+  "raw_rows": 19735,
+  "raw_columns": 29,
+  "missing_cells": 0,
+  "exact_duplicate_rows_removed": 0,
+  "clean_rows": 19735,
+  "start": "2016-01-11 17:00:00",
+  "end": "2016-05-27 18:00:00",
+  "non_10_minute_gaps": 0,
+  "feature_count": 31,
+  "dropped_predictors": [
+    "lights",
+    "rv1",
+    "rv2"
+  ],
+  "missing_values_policy": "Fail for review; no imputation needed for original dataset.",
+  "outlier_policy": "Retain all valid energy peaks; no clipping or IQR deletion.",
+  "splits": {
+    "chronological": {
+      "train": {
+        "rows": 13814,
+        "start": "2016-01-11 17:00:00",
+        "end": "2016-04-16 15:10:00"
+      },
+      "validation": {
+        "rows": 2960,
+        "start": "2016-04-16 15:20:00",
+        "end": "2016-05-07 04:30:00"
+      },
+      "test": {
+        "rows": 2961,
+        "start": "2016-05-07 04:40:00",
+        "end": "2016-05-27 18:00:00"
+      }
+    },
+    "random": {
+      "train": {
+        "rows": 13814,
+        "start": "2016-01-11 17:20:00",
+        "end": "2016-05-27 18:00:00"
+      },
+      "validation": {
+        "rows": 2960,
+        "start": "2016-01-11 17:00:00",
+        "end": "2016-05-27 17:30:00"
+      },
+      "test": {
+        "rows": 2961,
+        "start": "2016-01-11 18:40:00",
+        "end": "2016-05-27 17:50:00"
+      }
+    }
+  },
+  "training_energy_review": {
+    "upper_IQR_threshold_Wh": 175.0,
+    "training_rows_above_threshold_retained": 1609
+  },
+  "raw_sha256": "2820bf712ad0275cb18b85a05250926100d8e65ebb9f4d2d016ca91ea152a25d",
+  "run_utc": "2026-10-14T00:02:54.581000+00:00",
+  "seed": 42,
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.2.6"
+}

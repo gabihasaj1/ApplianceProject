@@ -1,0 +1,1 @@
+"""Shared appliances project utilities."""

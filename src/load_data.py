@@ -1,0 +1,15 @@
+"""Common data-loading interface for Hala, Gabi, and Jacob."""
+import json
+import pandas as pd
+from .prepare_data import ROOT
+
+
+def load_split(method="chronological", partition="train", include_time=True):
+    """Return X, y, metadata. Metadata is for error analysis, never predictors."""
+    if method not in ("chronological", "random") or partition not in ("train", "validation", "test"):
+        raise ValueError("Use chronological/random and train/validation/test.")
+    folder = ROOT / "data/processed"
+    config = json.loads((folder / "feature_config.json").read_text())
+    df = pd.read_csv(folder / f"{method}_{partition}.csv", parse_dates=["date"])
+    columns = config["features"] if include_time else config["non_time_features"]
+    return df[columns].copy(), df[config["target"]].copy(), df[["row_id", "date"]].copy()

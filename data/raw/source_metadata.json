@@ -1,0 +1,8 @@
+{
+  "source": "https://archive.ics.uci.edu/static/public/374/appliances+energy+prediction.zip",
+  "dataset_page": "https://archive.ics.uci.edu/dataset/374/appliances+energy+prediction",
+  "first_recorded_access_utc": "2026-10-14T00:02:00.948438+00:00",
+  "sha256": "2820bf712ad0275cb18b85a05250926100d8e65ebb9f4d2d016ca91ea152a25d",
+  "license": "CC BY 4.0",
+  "citation": "Candanedo, L. (2017). Appliances Energy Prediction. UCI. doi:10.24432/C5VC8G"
+}

@@ -1,5 +1,5 @@
 # Appliances Energy Prediction — data prep and modeling
-
+**https://colab.research.google.com/drive/1haMbwn1Yakmil8M8LR29yNLQZcqVQFQd?usp=sharing**
 ### Changes from the Ashley original scripts
 
 The data-preparation logic (cleaning, features, 70/15/15 splits, seed 42) is unchanged. Only three things were adapted so the code runs as a notebook:

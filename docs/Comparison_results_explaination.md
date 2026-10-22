@@ -12,8 +12,6 @@ For every model it shows three scores, once for the chronological split and once
 
 It also adds one extra column, the **gap**, which is chronological MAE minus random MAE. A big positive gap means the model looked a lot better on the random split than on the chronological one.
 
-The table is sorted by chronological MAE, because the chronological split is the one that copies real life: the model learns from earlier dates and is tested on later dates it has never seen.
-
 ## The table we got
 
 | Model | MAE chrono | MAE random | RMSE chrono | RMSE random | R² chrono | R² random | Gap |
